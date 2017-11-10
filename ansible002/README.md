@@ -4,7 +4,7 @@
 
 Se instalaran  y configuraran estos  3 servicios : 
 <ul>
-  <li>Nginx</li>
+  <li>Apache</li>
   <li>MySQL</li>
   <li>Redis</li>
 </ul>
@@ -13,9 +13,13 @@ Se instalaran  y configuraran estos  3 servicios :
 
 ### -Intalamos Munin en los 3 servidores
 
+Usamos el siguiente comando: 
+
 ansible-playbook -i ../hosts inicial.yml
 
 ### -luego instalamos el servidor web en el server01
+
+Usamos el siguiente comando: 
 
 ansible-playbook -i ../hosts webserver.yml
 
@@ -23,9 +27,13 @@ ansible-playbook -i ../hosts webserver.yml
 
 ### -Intalamos el servidor mysql en el server02
 
+Usamos el siguiente comando: 
+
 ansible-playbook -i ../hosts sqlserver.yml
 
 Para verificar si la instalacion fue correcta entramos al servidor : 
+
+Usamos el siguiente comando: 
 
 ssh root@server02 -p 2222 -i ../key.private
 
@@ -40,6 +48,8 @@ y deberia salir esto :
 <h3>Tercer paso, instalación de Redis.</h3>
 
 ### -Intalamos Redis en el server03
+
+Usamos el siguiente comando: 
 
 ansible-playbook -i ../hosts redis.yml
 
@@ -56,15 +66,11 @@ Entrar a nuestro servidor y ejecutar el comando redis-server y tendremos un outp
        [28550] 01 Aug 19:29:28 * The server is now ready to accept connections on port 6379
        ... more logs ...
 
-
-<h2>Ya con esto podriamos hacer la instalacion de Moodle, aunque falta instalar PHP </h2>
-
-
-...<h1>Segunda entrega</h1>
-
 <h2>Instalacion de Moodle</h2>
 
 ### -Intalamos Moodle en el server02
+
+Usamos el siguiente comando: 
 
 ansible-playbook -i ../hosts moodle.yml
 
