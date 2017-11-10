@@ -5,11 +5,10 @@ Debes construir un docker personalizado que incluye el servidor openssh
 
     docker build -t server:16.04 .
 
-En el paso anterior debes verificar el ID de la imágen que se creó y seleccionarla para los pasos a continuación.
 
 ## Segundo paso, despliege
 
-Ahora debes crear un conjunto de maquinas para pruebas, se crearán automáticamente un servidor `nginx`, uno de bases de datos en `mysql` y un servidor noSQL en `redis`.
+Ahora debes crear un conjunto de maquinas para pruebas, se crearán automáticamente un servidor `apache`, uno de bases de datos en `mysql` y un servidor noSQL en `redis`.
 
     0.0.0.0:6379->6379/tcp, 0.0.0.0:2223->22/tcp   server03
     0.0.0.0:3306->3306/tcp, 0.0.0.0:2222->22/tcp   server02
@@ -35,7 +34,7 @@ Realiza una prueba de conexión a las maquinas que se crearon recientemente, por
     ssh root@server02 -p 2222 -i ../key.private
     ssh root@server03 -p 2223 -i ../key.private
 
-Si la conexión se establece, ya está listo el banco de pruebas y puedes ingresar a ansible001.
+Si la conexión se establece, ya está listo el banco de pruebas y puedes ingresar a ansible002.
 
 
 
