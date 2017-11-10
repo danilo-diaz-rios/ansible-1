@@ -1,0 +1,8 @@
+---
+  - name: Instalación y configuración de Moodle
+    hosts: web
+    remote_user: root
+    roles:
+     - moodle
+
+
